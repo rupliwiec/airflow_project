@@ -867,3 +867,22 @@ File Path                                                                       
 [2023-08-31T19:36:58.155+0300] {manager.py:763} INFO - There are 0 files in /home/miminari/repos/airflow_project/airflow/dags
 [2023-08-31T19:41:58.504+0300] {manager.py:760} INFO - Searching for files in /home/miminari/repos/airflow_project/airflow/dags
 [2023-08-31T19:41:58.508+0300] {manager.py:763} INFO - There are 0 files in /home/miminari/repos/airflow_project/airflow/dags
+[2023-08-31T19:49:13.503+0300] {manager.py:488} INFO - Processing files using up to 2 processes at a time 
+[2023-08-31T19:49:13.503+0300] {manager.py:489} INFO - Process each file at most once every 30 seconds
+[2023-08-31T19:49:13.503+0300] {manager.py:490} INFO - Checking for new files in /home/miminari/repos/airflow_project/airflow/dags every 300 seconds
+[2023-08-31T19:49:13.504+0300] {manager.py:760} INFO - Searching for files in /home/miminari/repos/airflow_project/airflow/dags
+[2023-08-31T19:49:13.504+0300] {manager.py:763} INFO - There are 0 files in /home/miminari/repos/airflow_project/airflow/dags
+[2023-08-31T19:54:13.600+0300] {manager.py:760} INFO - Searching for files in /home/miminari/repos/airflow_project/airflow/dags
+[2023-08-31T19:54:13.601+0300] {manager.py:763} INFO - There are 0 files in /home/miminari/repos/airflow_project/airflow/dags
+[2023-08-31T19:59:13.908+0300] {manager.py:760} INFO - Searching for files in /home/miminari/repos/airflow_project/airflow/dags
+[2023-08-31T19:59:13.909+0300] {manager.py:763} INFO - There are 0 files in /home/miminari/repos/airflow_project/airflow/dags
+[2023-08-31T20:04:14.318+0300] {manager.py:760} INFO - Searching for files in /home/miminari/repos/airflow_project/airflow/dags
+[2023-08-31T20:04:14.319+0300] {manager.py:763} INFO - There are 0 files in /home/miminari/repos/airflow_project/airflow/dags
+[2023-08-31T20:09:15.283+0300] {manager.py:760} INFO - Searching for files in /home/miminari/repos/airflow_project/airflow/dags
+[2023-08-31T20:09:15.283+0300] {manager.py:763} INFO - There are 0 files in /home/miminari/repos/airflow_project/airflow/dags
+[2023-08-31T20:14:15.437+0300] {manager.py:760} INFO - Searching for files in /home/miminari/repos/airflow_project/airflow/dags
+[2023-08-31T20:14:15.437+0300] {manager.py:763} INFO - There are 0 files in /home/miminari/repos/airflow_project/airflow/dags
+[2023-08-31T20:19:15.720+0300] {manager.py:760} INFO - Searching for files in /home/miminari/repos/airflow_project/airflow/dags
+[2023-08-31T20:19:15.720+0300] {manager.py:763} INFO - There are 0 files in /home/miminari/repos/airflow_project/airflow/dags
+[2023-08-31T20:24:15.872+0300] {manager.py:760} INFO - Searching for files in /home/miminari/repos/airflow_project/airflow/dags
+[2023-08-31T20:24:15.873+0300] {manager.py:763} INFO - There are 0 files in /home/miminari/repos/airflow_project/airflow/dags

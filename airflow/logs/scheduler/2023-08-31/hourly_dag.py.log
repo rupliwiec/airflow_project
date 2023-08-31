@@ -543,3 +543,31 @@ Traceback (most recent call last):
 ModuleNotFoundError: No module named 'fetch'
 [2023-09-01T00:13:36.041+0300] {processor.py:841} WARNING - No viable dags retrieved from /home/miminari/repos/airflow_project/airflow/dags/hourly_dag.py
 [2023-09-01T00:13:36.060+0300] {processor.py:179} INFO - Processing /home/miminari/repos/airflow_project/airflow/dags/hourly_dag.py took 0.024 seconds
+[2023-09-01T00:14:06.174+0300] {processor.py:157} INFO - Started process (PID=15676) to work on /home/miminari/repos/airflow_project/airflow/dags/hourly_dag.py
+[2023-09-01T00:14:06.177+0300] {processor.py:829} INFO - Processing file /home/miminari/repos/airflow_project/airflow/dags/hourly_dag.py for tasks to queue
+[2023-09-01T00:14:06.178+0300] {logging_mixin.py:151} INFO - [2023-09-01T00:14:06.177+0300] {dagbag.py:539} INFO - Filling up the DagBag from /home/miminari/repos/airflow_project/airflow/dags/hourly_dag.py
+[2023-09-01T00:14:06.179+0300] {logging_mixin.py:151} INFO - [2023-09-01T00:14:06.179+0300] {dagbag.py:347} ERROR - Failed to import: /home/miminari/repos/airflow_project/airflow/dags/hourly_dag.py
+Traceback (most recent call last):
+  File "/home/miminari/repos/airflow_project/env/lib/python3.10/site-packages/airflow/models/dagbag.py", line 343, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/miminari/repos/airflow_project/airflow/dags/hourly_dag.py", line 4, in <module>
+    from fetch.petrol import Petrol
+ModuleNotFoundError: No module named 'fetch'
+[2023-09-01T00:14:06.180+0300] {processor.py:841} WARNING - No viable dags retrieved from /home/miminari/repos/airflow_project/airflow/dags/hourly_dag.py
+[2023-09-01T00:14:06.199+0300] {processor.py:179} INFO - Processing /home/miminari/repos/airflow_project/airflow/dags/hourly_dag.py took 0.026 seconds
+[2023-09-01T00:14:36.289+0300] {processor.py:157} INFO - Started process (PID=15771) to work on /home/miminari/repos/airflow_project/airflow/dags/hourly_dag.py
+[2023-09-01T00:14:36.290+0300] {processor.py:829} INFO - Processing file /home/miminari/repos/airflow_project/airflow/dags/hourly_dag.py for tasks to queue
+[2023-09-01T00:14:36.291+0300] {logging_mixin.py:151} INFO - [2023-09-01T00:14:36.291+0300] {dagbag.py:539} INFO - Filling up the DagBag from /home/miminari/repos/airflow_project/airflow/dags/hourly_dag.py
+[2023-09-01T00:14:36.293+0300] {logging_mixin.py:151} INFO - [2023-09-01T00:14:36.292+0300] {dagbag.py:347} ERROR - Failed to import: /home/miminari/repos/airflow_project/airflow/dags/hourly_dag.py
+Traceback (most recent call last):
+  File "/home/miminari/repos/airflow_project/env/lib/python3.10/site-packages/airflow/models/dagbag.py", line 343, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/miminari/repos/airflow_project/airflow/dags/hourly_dag.py", line 4, in <module>
+    from fetch.petrol import Petrol
+ModuleNotFoundError: No module named 'fetch'
+[2023-09-01T00:14:36.293+0300] {processor.py:841} WARNING - No viable dags retrieved from /home/miminari/repos/airflow_project/airflow/dags/hourly_dag.py
+[2023-09-01T00:14:36.320+0300] {processor.py:179} INFO - Processing /home/miminari/repos/airflow_project/airflow/dags/hourly_dag.py took 0.034 seconds

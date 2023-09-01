@@ -1230,3 +1230,10 @@ ModuleNotFoundError: No module named 'fetch'
 [2023-09-01T11:05:27.640+0300] {processor.py:157} INFO - Started process (PID=13828) to work on /home/miminari/repos/airflow_project/airflow/dags/hourly_dag.py
 [2023-09-01T11:05:27.741+0300] {processor.py:829} INFO - Processing file /home/miminari/repos/airflow_project/airflow/dags/hourly_dag.py for tasks to queue
 [2023-09-01T11:05:27.828+0300] {logging_mixin.py:151} INFO - [2023-09-01T11:05:27.752+0300] {dagbag.py:539} INFO - Filling up the DagBag from /home/miminari/repos/airflow_project/airflow/dags/hourly_dag.py
+[2023-09-01T11:13:29.505+0300] {processor.py:157} INFO - Started process (PID=3631) to work on /home/miminari/repos/airflow_project/airflow/dags/hourly_dag.py
+[2023-09-01T11:13:29.512+0300] {processor.py:829} INFO - Processing file /home/miminari/repos/airflow_project/airflow/dags/hourly_dag.py for tasks to queue
+[2023-09-01T11:13:29.514+0300] {logging_mixin.py:151} INFO - [2023-09-01T11:13:29.514+0300] {dagbag.py:539} INFO - Filling up the DagBag from /home/miminari/repos/airflow_project/airflow/dags/hourly_dag.py
+[2023-09-01T11:13:29.532+0300] {processor.py:839} INFO - DAG(s) dict_keys(['hourly_tasks_dag']) retrieved from /home/miminari/repos/airflow_project/airflow/dags/hourly_dag.py
+[2023-09-01T11:13:29.747+0300] {logging_mixin.py:151} INFO - [2023-09-01T11:13:29.746+0300] {dag.py:2907} INFO - Sync 1 DAGs
+[2023-09-01T11:13:29.786+0300] {logging_mixin.py:151} INFO - [2023-09-01T11:13:29.786+0300] {dag.py:3677} INFO - Setting next_dagrun for hourly_tasks_dag to 2023-09-01T05:00:00+00:00, run_after=2023-09-01T06:00:00+00:00
+[2023-09-01T11:13:29.802+0300] {processor.py:179} INFO - Processing /home/miminari/repos/airflow_project/airflow/dags/hourly_dag.py took 0.299 seconds

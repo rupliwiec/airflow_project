@@ -2195,3 +2195,16 @@ File Path                                                          PID  Runtime 
 ---------------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
 /home/miminari/repos/airflow_project/airflow/dags/hourly_dag.py  13828  0.13s             1           0  0.08s           2023-09-01T08:04:53
 ================================================================================
+[2023-09-01T11:13:29.427+0300] {manager.py:488} INFO - Processing files using up to 2 processes at a time 
+[2023-09-01T11:13:29.429+0300] {manager.py:489} INFO - Process each file at most once every 30 seconds
+[2023-09-01T11:13:29.429+0300] {manager.py:490} INFO - Checking for new files in /home/miminari/repos/airflow_project/airflow/dags every 300 seconds
+[2023-09-01T11:13:29.429+0300] {manager.py:760} INFO - Searching for files in /home/miminari/repos/airflow_project/airflow/dags
+[2023-09-01T11:13:29.437+0300] {manager.py:763} INFO - There are 1 files in /home/miminari/repos/airflow_project/airflow/dags
+[2023-09-01T11:13:29.527+0300] {manager.py:888} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                          PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------------------------------------  -----  ---------  --------  ----------  --------------  ----------
+/home/miminari/repos/airflow_project/airflow/dags/hourly_dag.py   3631  0.03s             0           0
+================================================================================

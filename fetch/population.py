@@ -5,7 +5,7 @@ class Population:
         self.country = country
     
     def fetch_population(self):
-        url = f'https://en.wikipedia.org/wiki/{self.country}'
+        url = f'https://en.wikipedia.org/wiki/Demographics_of_{self.country}'
         FetchData(url=url, file_name=f'{self.country}_total_population').run()
 
 if __name__=='__main__':

@@ -11,4 +11,4 @@ class Weather:
 
 if __name__=='__main__':
     Weather('minsk').fetch_weather()
-    Weather('erevan').fetch_weather()
+    Weather('yerevan').fetch_weather()

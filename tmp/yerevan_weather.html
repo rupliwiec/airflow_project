@@ -1,0 +1,1060 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link rel="dns-prefetch" href="https://cdnstatic.ventusky.com">
+	<link rel="dns-prefetch" href="https://data.ventusky.com">
+	<link rel="dns-prefetch" href="https://api.ventusky.com">
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <!-- <meta name="apple-itunes-app" content="app-id=1280984498"> -->
+    <title>Երեւան  (Yerevan) - Weather Forecast Maps | Ventusky</title>
+    <link rel=stylesheet href="https://cdnstatic.ventusky.com/media/style.css?1693290660">
+    <script>
+    document.addEventListener('gesturestart', function (e) {
+    e.preventDefault();
+    });
+
+    </script>
+    <meta name="description" content="Երեւան  (Yerevan) ☀ ✅ Weather forecast for 10 days, information from meteorological stations, webcams, sunrise and sunset, wind and precipitation maps for this place">
+    <meta name="keywords" content="weather, forecast, maps, wind, temperature, precipitation, rain, cloud, pressure, CAPE">
+    <meta name="application-name" content="Ventusky">
+    
+        
+    <meta property="og:image" content="https://cdnstatic.ventusky.com/images/social-app.jpg">
+    		   
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@Ventuskycom">
+    <meta name="twitter:title" content="Երեւան  (Yerevan) - Weather Forecast Maps | Ventusky">
+    <meta name="twitter:description" content="Երեւան  (Yerevan) ☀ ✅ Weather forecast for 10 days, information from meteorological stations, webcams, sunrise and sunset, wind and precipitation maps for this place">
+    <meta name="twitter:image" content="https://cdnstatic.ventusky.com/images/social-app.jpg">
+		
+    <link rel="shortcut icon" href="https://cdnstatic.ventusky.com/images/favicon.ico">
+    <link rel="apple-touch-icon" href="https://cdnstatic.ventusky.com/images/apple-touch-icon-152x152.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    
+</head>
+<body>
+    <br />
+    <form id="header">
+        <h1><a href="https://www.ventusky.com/">Ventusky: Weather Forecast Maps</a></h1>
+        <label>
+            <input name="q" />
+        </label>
+        <ul>
+            <li class="progress"></li>
+        </ul>
+    </form>
+    <menu>
+        <li>
+            <a href="about" id="menu-about" class="button">About</a>
+        </li>
+    </menu>
+    <div id="no-js">
+     <ul>
+     <li>Temperature</li>
+     <li>Precipitation</li>
+     <li>Wind</li>
+     <li>Gust</li>
+     <li>Clouds</li>
+     <li>Air pressure</li>
+     <li>CAPE</li>
+     <li>Snow cover</li>
+     <li>Freezing level</li>
+     </ul>
+     
+     Wind animation <br />
+     GFS, ICON, GEM
+
+    </div>
+	
+	<div id="news" data-news="news-23" style="width: 250px;">
+      <a href="https://twitter.com/Ventuskycom/status/1696515733793178069" target="_blank">
+	    <strong>You can now display weather fronts</strong>
+	    <img src="https://cdnstatic.ventusky.com/images/promo/frontsweb.png" alt="Weather fronts">        
+      </a>
+    </div>
+
+
+    <script>
+var MapOptions = {
+  "root": "https://www.ventusky.com/",
+  "lang": "en",
+  "lat": 53.9168,
+  "lon": 30.3449,
+  "zoom": 5,
+  "model": "auto",
+  "now":               Date.UTC(2023, 8, 1, 18, 25),
+  "camTilesUpdated": 1687248000,
+
+  "icon-deTimelineStart": Date.UTC(2022, 0, 1, 0),
+"icon-deTimelineEnd": Date.UTC(2023, 8, 3, 15),
+"icon-deUpdated": Date.UTC(2023, 8, 1, 15, 0),
+"icon-deAccumulationStart": Date.UTC(2023, 8, 1, 15),
+
+"icon-waterTimelineStart": Date.UTC(2017, 6, 1, 0),
+"icon-waterTimelineEnd": Date.UTC(2023, 8, 8, 12),
+"icon-waterUpdated": Date.UTC(2023, 8, 1, 12, 0),
+
+"icon-eu-waterTimelineStart": Date.UTC(2020, 1, 17, 0),
+"icon-eu-waterTimelineEnd": Date.UTC(2023, 8, 4, 15),
+"icon-eu-waterUpdated": Date.UTC(2023, 8, 1, 12, 0),
+
+"gfsTimelineStart": Date.UTC(2018, 0, 1, 0),
+"gfsTimelineEnd": Date.UTC(2023, 8, 15, 12),
+"gfsUpdated": Date.UTC(2023, 8, 1, 12, 0),
+"gfsAccumulationStart": Date.UTC(2023, 8, 1, 15),
+
+"gemTimelineStart": Date.UTC(2022, 0, 1, 0),
+"gemTimelineEnd": Date.UTC(2023, 8, 11, 0),
+"gemUpdated": Date.UTC(2023, 8, 1, 12, 0),
+"gemAccumulationStart": Date.UTC(2023, 8, 1, 15),
+
+"hrrrTimelineStart": Date.UTC(2019, 0, 1, 0),
+"hrrrTimelineEnd": Date.UTC(2023, 8, 3, 12),
+"hrrrUpdated": Date.UTC(2023, 8, 1, 16, 0),
+"hrrrAccumulationStart": Date.UTC(2023, 8, 1, 16),
+
+"nbmTimelineStart": Date.UTC(2022, 0, 1, 0),
+"nbmTimelineEnd": Date.UTC(2023, 8, 3, 4),
+"nbmUpdated": Date.UTC(2023, 8, 1, 17, 0),
+"nbmAccumulationStart": Date.UTC(2023, 8, 1, 17),
+
+"euradTimelineStart": Date.UTC(2019, 0, 1, 0),
+"euradTimelineEnd": Date.UTC(2023, 8, 1, 19),
+"euradUpdated": Date.UTC(2023, 8, 1, 19, 50),
+
+"eurad_hresTimelineStart": Date.UTC(2023, 7, 27, 0),
+"eurad_hresTimelineEnd": Date.UTC(2023, 8, 1, 20),
+"eurad_hresUpdated": Date.UTC(2023, 8, 1, 19, 50),
+
+"usradTimelineStart": Date.UTC(2019, 0, 1, 0),
+"usradTimelineEnd": Date.UTC(2023, 8, 1, 19),
+"usradUpdated": Date.UTC(2023, 8, 1, 19, 50),
+
+"woradTimelineStart": Date.UTC(2019, 0, 1, 0),
+"woradTimelineEnd": Date.UTC(2023, 8, 1, 18),
+"woradUpdated": Date.UTC(2023, 8, 1, 19, 50),
+
+"silamTimelineStart": Date.UTC(2020, 1, 15, 0),
+"silamTimelineEnd": Date.UTC(2023, 8, 6, 0),
+"silamUpdated": Date.UTC(2023, 8, 1, 0, 0),
+
+"silam-euTimelineStart": Date.UTC(2020, 1, 15, 0),
+"silam-euTimelineEnd": Date.UTC(2023, 8, 6, 0),
+"silam-euUpdated": Date.UTC(2023, 8, 1, 3, 0),
+
+"goesTimelineStart": Date.UTC(2020, 4, 1, 1),
+"goesTimelineEnd": Date.UTC(2023, 8, 1, 18),
+"goesUpdated": Date.UTC(2023, 8, 1, 18, 20),
+
+"rtofsTimelineStart": Date.UTC(2021, 5, 28, 0),
+"rtofsTimelineEnd": Date.UTC(2023, 8, 9, 0),
+"rtofsUpdated": Date.UTC(2023, 8, 1, 0, 0),
+
+"ovationTimelineStart": Date.UTC(2021, 3, 1, 0),
+"ovationTimelineEnd": Date.UTC(2023, 8, 1, 19),
+"ovationUpdated": Date.UTC(2023, 8, 1, 18, 30),
+
+"aromeTimelineStart": Date.UTC(2022, 3, 26, 0),
+"aromeTimelineEnd": Date.UTC(2023, 8, 3, 6),
+"aromeUpdated": Date.UTC(2023, 8, 1, 12, 0),
+"aromeAccumulationStart": Date.UTC(2023, 8, 1, 12),
+
+"ukmoTimelineStart": Date.UTC(2022, 4, 24, 0),
+"ukmoTimelineEnd": Date.UTC(2023, 8, 2, 12),
+"ukmoUpdated": Date.UTC(2023, 8, 1, 12, 0),
+
+"ukmo-ukTimelineStart": Date.UTC(2023, 2, 1, 0),
+"ukmo-ukTimelineEnd": Date.UTC(2023, 8, 6, 15),
+"ukmo-ukUpdated": Date.UTC(2023, 8, 1, 16, 0),
+"ukmo-uk3hStart": Date.UTC(2023, 8, 3, 21),
+"ukmo-ukAccumulationStart": Date.UTC(2023, 8, 1, 16),
+
+"iconTimelineStart": Date.UTC(2018, 0, 1, 0),
+"iconTimelineEnd": Date.UTC(2023, 8, 9, 0),
+"iconUpdated": Date.UTC(2023, 8, 1, 12, 0),
+"icon3hStart": Date.UTC(2023, 8, 4, 18),
+"iconAccumulationStart": Date.UTC(2023, 8, 1, 12),
+
+"icon-euTimelineStart": Date.UTC(2018, 10, 0, 0),
+"icon-euTimelineEnd": Date.UTC(2023, 8, 6, 12),
+"icon-euUpdated": Date.UTC(2023, 8, 1, 15, 0),
+"icon-eu3hStart": Date.UTC(2023, 8, 4, 18),
+"icon-euAccumulationStart": Date.UTC(2023, 8, 1, 15),
+
+"ecmwf-lresTimelineStart": Date.UTC(2022, 3, 10, 0),
+"ecmwf-lresTimelineEnd": Date.UTC(2023, 8, 11, 0),
+"ecmwf-lresUpdated": Date.UTC(2023, 8, 1, 6, 0),
+"ecmwf-lres6hStart": Date.UTC(2023, 8, 7, 0),
+"ecmwf-lresAccumulationStart": Date.UTC(2023, 8, 1, 6),
+
+"mepsTimelineStart": Date.UTC(2023, 3, 8, 0),
+"mepsTimelineEnd": Date.UTC(2023, 8, 4, 6),
+"mepsUpdated": Date.UTC(2023, 8, 1, 12, 0),
+"mepsAccumulationStart": Date.UTC(2023, 8, 1, 12),
+
+"wavewatch-noTimelineStart": Date.UTC(2023, 4, 15, 0),
+"wavewatch-noTimelineEnd": Date.UTC(2023, 8, 4, 6),
+"wavewatch-noUpdated": Date.UTC(2023, 8, 1, 6, 0),
+
+  
+  "ukmo-ukUpdated": Date.UTC(2023, 8, 1, 16, 0), //overrides non-radar version
+ 
+  "ecmwfTimelineStart": Date.UTC(1979, 5, 1, 0),
+  "ecmwfTimelineEnd":   Date.UTC(2020, 9, 31, 21),
+  "ecmwfUpdated":       Date.UTC(2021, 0, 29, 0, 0),    
+               
+  "hurricanesUpdated":  Date.UTC(2023, 8, 1, 18, 13)
+};
+    </script>
+
+    <script src="https://cdnstatic.ventusky.com/media/script-en.js?1693290660"></script>
+    
+
+        
+        <div id="aside">
+            <div id="aside_inner">
+            <span id="aside_close_btn" onclick="document.getElementById('aside').className='hidden'">
+                <span class="aside_close_btn_ico"></span>
+            </span>
+                
+<div class="header">
+    <div class="header_background">
+        <h1>
+            Երեւան  (Yerevan)        </h1>
+
+        <a href="#" id="star" data-add="Save on &#10;map" data-remove="Remove from &#10;map" data-star="40.18;44.51;Երեւան  (Yerevan)"><span></span></a>    </div>
+</div>
+<!--/header-->
+
+<div class="section">
+    <div class="subheader">
+        <a href="https://www.google.com/maps/@40.1776108,44.5125839,15z" target="_blank" class="maps_link">
+            See on Google map        </a>
+        <div class="destination">
+            Armenia / Lat.:&nbsp;40°10'N&nbsp;/&nbspLon.:&nbsp;44°30'E&nbsp;/&nbspAltitude:&nbsp;991 m<br />Timezone:&nbsp;Asia/Yerevan (UTC+4) /&nbspCurrent time:&nbsp;22:25 2023/09/01        </div>
+        <!--/destination-->
+
+    </div>
+    <!--/subheader-->
+</div>
+
+<!--/section-->
+<ul class="menu clearfix">
+        <li>
+        <a href="#actual">
+            Current Weather        </a>
+    </li>
+            <li>
+        <a href="#forecast">
+            Forecast        </a>
+    </li>
+    <li>
+        <a href="#astro">
+            Sun and Moon        </a>
+    </li>
+</ul>
+
+
+<div id="actual" class="section clearfix">
+    <div class="info_tables">
+        <div class="info_table">
+            <table>
+                <tr>
+                                                            <td class="temperature">
+                        29 &deg;C                    </td>
+                                    </tr>
+                <tr>
+                    <td>
+                                            </td>
+                </tr>
+                                <tr>
+                    <td>
+                        <span>
+                            Wind                        </span>
+                        <b class="wind_ico arrow_45">
+                            20 km/h                        </b>
+                    </td>
+                </tr>
+                                            </table>
+        </div>
+        <!--/info_table-->
+        <div class="info_table spacer">
+            &nbsp;
+        </div>
+        <!--/info_table-->
+        <div class="info_table">
+            <table>
+                                                <!--<tr>
+                    <td>Sunrise and Sunset</td>
+                    <td><b>08:15 - 21:44</b></td>
+                </tr>-->
+                                <tr>
+                    <td>
+                        Humidity                    </td>
+                    <td>
+                        <b>
+                            31 %                        </b>
+                    </td>
+                </tr>
+                                                                                                            </table>
+        </div>
+        <!--/info_table-->
+    </div>
+    <!--/info_tables-->
+    <p class="note">
+        Calculated from nearby stations (22:00 2023/09/01)    </p>
+</div>
+<!--/section-->
+
+
+
+<div id="forecast" class="section section_grey">
+
+    <div class="section_header clearfix">
+        <h2>
+            Weather for the next 24 hours        </h2>
+    </div>
+
+
+    <div class="forecast_block">
+        <table class="mesto-predpoved">
+            <thead>
+                <tr>
+                    <th>23:00</th><th>00:00 <span>tomorrow</span></th><th>01:00 <span>tomorrow</span></th><th>02:00 <span>tomorrow</span></th><th>03:00 <span>tomorrow</span></th><th>04:00 <span>tomorrow</span></th><th>05:00 <span>tomorrow</span></th><th>06:00 <span>tomorrow</span></th><th>07:00 <span>tomorrow</span></th><th>08:00 <span>tomorrow</span></th><th>09:00 <span>tomorrow</span></th><th>10:00 <span>tomorrow</span></th><th>11:00 <span>tomorrow</span></th><th>12:00 <span>tomorrow</span></th><th>13:00 <span>tomorrow</span></th><th>14:00 <span>tomorrow</span></th><th>15:00 <span>tomorrow</span></th><th>16:00 <span>tomorrow</span></th><th>17:00 <span>tomorrow</span></th><th>18:00 <span>tomorrow</span></th><th>19:00 <span>tomorrow</span></th><th>20:00 <span>tomorrow</span></th><th>21:00 <span>tomorrow</span></th><th>22:00 <span>tomorrow</span></th><th>23:00 <span>tomorrow</span></th>                </tr>
+            </thead>
+                        <tbody>
+                <tr>
+                    
+                        <td>
+                            <span class="big_ico big_ico_5"></span>
+                            <b class="teplota">27 &deg;C</b> <br>
+                            <span >0 mm</span><br>
+                            <div title="Precipitation probability 10 %"><span class="prob-line"><span >10 %</span></span></div>
+                            <span class="wind_ico arrow_45">NE</span><br>
+                            <span>21 km/h</span><br>
+                            
+                        </td>
+                        
+                        <td>
+                            <span class="big_ico big_ico_4_noc"></span>
+                            <b class="teplota">27 &deg;C</b> <br>
+                            <span >0 mm</span><br>
+                            <div title="Precipitation probability 10 %"><span class="prob-line"><span >10 %</span></span></div>
+                            <span class="wind_ico arrow_45">NE</span><br>
+                            <span>19 km/h</span><br>
+                            
+                        </td>
+                        
+                        <td>
+                            <span class="big_ico big_ico_2_noc"></span>
+                            <b class="teplota">26 &deg;C</b> <br>
+                            <span >0 mm</span><br>
+                            <div title="Precipitation probability 10 %"><span class="prob-line"><span >10 %</span></span></div>
+                            <span class="wind_ico arrow_45">NE</span><br>
+                            <span>13 km/h</span><br>
+                            
+                        </td>
+                        
+                        <td>
+                            <span class="big_ico big_ico_3_noc"></span>
+                            <b class="teplota">25 &deg;C</b> <br>
+                            <span >0 mm</span><br>
+                            <div title="Precipitation probability 10 %"><span class="prob-line"><span >10 %</span></span></div>
+                            <span class="wind_ico arrow_45">NE</span><br>
+                            <span>7 km/h</span><br>
+                            
+                        </td>
+                        
+                        <td>
+                            <span class="big_ico big_ico_3_noc"></span>
+                            <b class="teplota">24 &deg;C</b> <br>
+                            <span >0 mm</span><br>
+                            <div title="Precipitation probability 10 %"><span class="prob-line"><span >10 %</span></span></div>
+                            <span class="wind_ico arrow_45">NE</span><br>
+                            <span>9 km/h</span><br>
+                            
+                        </td>
+                        
+                        <td>
+                            <span class="big_ico big_ico_3_noc"></span>
+                            <b class="teplota">23 &deg;C</b> <br>
+                            <span >0 mm</span><br>
+                            <div title="Precipitation probability 10 %"><span class="prob-line"><span >10 %</span></span></div>
+                            <span class="wind_ico arrow_45">NE</span><br>
+                            <span>9 km/h</span><br>
+                            
+                        </td>
+                        
+                        <td>
+                            <span class="big_ico big_ico_4_noc"></span>
+                            <b class="teplota">23 &deg;C</b> <br>
+                            <span >0 mm</span><br>
+                            <div title="Precipitation probability 10 %"><span class="prob-line"><span >10 %</span></span></div>
+                            <span class="wind_ico arrow_45">NE</span><br>
+                            <span>9 km/h</span><br>
+                            
+                        </td>
+                        
+                        <td>
+                            <span class="big_ico big_ico_4_noc"></span>
+                            <b class="teplota">22 &deg;C</b> <br>
+                            <span >0 mm</span><br>
+                            <div title="Precipitation probability 10 %"><span class="prob-line"><span >10 %</span></span></div>
+                            <span class="wind_ico arrow_45">NE</span><br>
+                            <span>8 km/h</span><br>
+                            
+                        </td>
+                        
+                        <td>
+                            <span class="big_ico big_ico_5"></span>
+                            <b class="teplota">22 &deg;C</b> <br>
+                            <span >0 mm</span><br>
+                            <div title="Precipitation probability 10 %"><span class="prob-line"><span >10 %</span></span></div>
+                            <span class="wind_ico arrow_45">NE</span><br>
+                            <span>6 km/h</span><br>
+                            
+                        </td>
+                        
+                        <td>
+                            <span class="big_ico big_ico_3"></span>
+                            <b class="teplota">24 &deg;C</b> <br>
+                            <span >0 mm</span><br>
+                            <div title="Precipitation probability 10 %"><span class="prob-line"><span >10 %</span></span></div>
+                            <span class="wind_ico arrow_90">E</span><br>
+                            <span>5 km/h</span><br>
+                            
+                        </td>
+                        
+                        <td>
+                            <span class="big_ico big_ico_3"></span>
+                            <b class="teplota">26 &deg;C</b> <br>
+                            <span >0 mm</span><br>
+                            <div title="Precipitation probability 10 %"><span class="prob-line"><span >10 %</span></span></div>
+                            <span class="wind_ico arrow_180">S</span><br>
+                            <span>3 km/h</span><br>
+                            
+                        </td>
+                        
+                        <td>
+                            <span class="big_ico big_ico_3"></span>
+                            <b class="teplota">28 &deg;C</b> <br>
+                            <span >0 mm</span><br>
+                            <div title="Precipitation probability 10 %"><span class="prob-line"><span >10 %</span></span></div>
+                            <span class="wind_ico arrow_225">SW</span><br>
+                            <span>8 km/h</span><br>
+                            
+                        </td>
+                        
+                        <td>
+                            <span class="big_ico big_ico_2"></span>
+                            <b class="teplota">29 &deg;C</b> <br>
+                            <span >0 mm</span><br>
+                            <div title="Precipitation probability 10 %"><span class="prob-line"><span >10 %</span></span></div>
+                            <span class="wind_ico arrow_225">SW</span><br>
+                            <span>10 km/h</span><br>
+                            
+                        </td>
+                        
+                        <td>
+                            <span class="big_ico big_ico_2"></span>
+                            <b class="teplota">30 &deg;C</b> <br>
+                            <span >0 mm</span><br>
+                            <div title="Precipitation probability 10 %"><span class="prob-line"><span >10 %</span></span></div>
+                            <span class="wind_ico arrow_225">SW</span><br>
+                            <span>11 km/h</span><br>
+                            
+                        </td>
+                        
+                        <td>
+                            <span class="big_ico big_ico_1"></span>
+                            <b class="teplota">32 &deg;C</b> <br>
+                            <span >0 mm</span><br>
+                            <div title="Precipitation probability 10 %"><span class="prob-line"><span >10 %</span></span></div>
+                            <span class="wind_ico arrow_225">SW</span><br>
+                            <span>11 km/h</span><br>
+                            
+                        </td>
+                        
+                        <td>
+                            <span class="big_ico big_ico_1"></span>
+                            <b class="teplota">33 &deg;C</b> <br>
+                            <span >0 mm</span><br>
+                            <div title="Precipitation probability 10 %"><span class="prob-line"><span >10 %</span></span></div>
+                            <span class="wind_ico arrow_225">SW</span><br>
+                            <span>9 km/h</span><br>
+                            
+                        </td>
+                        
+                        <td>
+                            <span class="big_ico big_ico_1"></span>
+                            <b class="teplota">34 &deg;C</b> <br>
+                            <span >0 mm</span><br>
+                            <div title="Precipitation probability 10 %"><span class="prob-line"><span >10 %</span></span></div>
+                            <span class="wind_ico arrow_225">SW</span><br>
+                            <span>9 km/h</span><br>
+                            
+                        </td>
+                        
+                        <td>
+                            <span class="big_ico big_ico_2"></span>
+                            <b class="teplota">34 &deg;C</b> <br>
+                            <span >0 mm</span><br>
+                            <div title="Precipitation probability 10 %"><span class="prob-line"><span >10 %</span></span></div>
+                            <span class="wind_ico arrow_270">W</span><br>
+                            <span>5 km/h</span><br>
+                            
+                        </td>
+                        
+                        <td>
+                            <span class="big_ico big_ico_5"></span>
+                            <b class="teplota">31 &deg;C</b> <br>
+                            <span >0 mm</span><br>
+                            <div title="Precipitation probability 40 %"><span class="prob-line"><span >40 %</span></span></div>
+                            <span class="wind_ico arrow_45">NE</span><br>
+                            <span>31 km/h</span><br>
+                            <span class="with_ico pozor-nizke">Gust:<br> 54 km/h</span>
+                        </td>
+                        
+                        <td>
+                            <span class="big_ico big_ico_24"></span>
+                            <b class="teplota">30 &deg;C</b> <br>
+                            <span >0 mm</span><br>
+                            <div title="Precipitation probability 20 %"><span class="prob-line"><span >20 %</span></span></div>
+                            <span class="wind_ico arrow_45">NE</span><br>
+                            <span>27 km/h</span><br>
+                            <span class="with_ico pozor-nizke">Gust:<br> 54 km/h</span>
+                        </td>
+                        
+                        <td>
+                            <span class="big_ico big_ico_4"></span>
+                            <b class="teplota">29 &deg;C</b> <br>
+                            <span >0 mm</span><br>
+                            <div title="Precipitation probability 10 %"><span class="prob-line"><span >10 %</span></span></div>
+                            <span class="wind_ico arrow_45">NE</span><br>
+                            <span>25 km/h</span><br>
+                            
+                        </td>
+                        
+                        <td>
+                            <span class="big_ico big_ico_1_noc"></span>
+                            <b class="teplota">28 &deg;C</b> <br>
+                            <span >0 mm</span><br>
+                            <div title="Precipitation probability 10 %"><span class="prob-line"><span >10 %</span></span></div>
+                            <span class="wind_ico arrow_45">NE</span><br>
+                            <span>24 km/h</span><br>
+                            
+                        </td>
+                        
+                        <td>
+                            <span class="big_ico big_ico_2_noc"></span>
+                            <b class="teplota">27 &deg;C</b> <br>
+                            <span >0 mm</span><br>
+                            <div title="Precipitation probability 10 %"><span class="prob-line"><span >10 %</span></span></div>
+                            <span class="wind_ico arrow_45">NE</span><br>
+                            <span>24 km/h</span><br>
+                            
+                        </td>
+                        
+                        <td>
+                            <span class="big_ico big_ico_1_noc"></span>
+                            <b class="teplota">26 &deg;C</b> <br>
+                            <span >0 mm</span><br>
+                            <div title="Precipitation probability 10 %"><span class="prob-line"><span >10 %</span></span></div>
+                            <span class="wind_ico arrow_0">N</span><br>
+                            <span>29 km/h</span><br>
+                            
+                        </td>
+                        
+                        <td>
+                            <span class="big_ico big_ico_3_noc"></span>
+                            <b class="teplota">26 &deg;C</b> <br>
+                            <span >0 mm</span><br>
+                            <div title="Precipitation probability 10 %"><span class="prob-line"><span >10 %</span></span></div>
+                            <span class="wind_ico arrow_45">NE</span><br>
+                            <span>25 km/h</span><br>
+                            
+                        </td>
+                                        </tr>
+            </tbody>
+
+        </table>
+
+    </div>
+</div>
+
+<forecast data-forecast='{"d_1":{"h_0":{"s":2,"n":"1","td":"26 &deg;C","sr":0,"srd":"0 mm","vsd":"13 km\/h","vg":32,"vgd":"32 km\/h","vd45":45,"vdId":"NE"},"h_3":{"s":3,"n":"1","td":"23 &deg;C","sr":0,"srd":"0 mm","vsd":"9 km\/h","vg":14,"vgd":"14 km\/h","vd45":45,"vdId":"NE"},"h_6":{"s":5,"n":"0","td":"22 &deg;C","sr":0,"srd":"0 mm","vsd":"6 km\/h","vg":14,"vgd":"14 km\/h","vd45":45,"vdId":"NE"},"h_9":{"s":3,"n":"0","td":"28 &deg;C","sr":0,"srd":"0 mm","vsd":"8 km\/h","vg":14,"vgd":"14 km\/h","vd45":225,"vdId":"SW"},"h_12":{"s":1,"n":"0","td":"32 &deg;C","sr":0,"srd":"0 mm","vsd":"11 km\/h","vg":22,"vgd":"22 km\/h","vd45":225,"vdId":"SW"},"h_15":{"s":2,"n":"0","td":"34 &deg;C","sr":0,"srd":"0 mm","vsd":"5 km\/h","vg":18,"vgd":"18 km\/h","vd45":270,"vdId":"W"},"h_18":{"s":4,"n":"0","td":"29 &deg;C","sr":0,"srd":"0 mm","vsd":"25 km\/h","vg":50,"vgd":"50 km\/h","vd45":45,"vdId":"NE"},"h_21":{"s":1,"n":"1","td":"26 &deg;C","sr":0,"srd":"0 mm","vsd":"29 km\/h","vg":50,"vgd":"50 km\/h","vd45":0,"vdId":"N"}},"d_2":{"h_0":{"s":4,"n":"1","td":"25 &deg;C","sr":0.1,"srd":"0.1 mm","vsd":"20 km\/h","vg":43,"vgd":"43 km\/h","vd45":45,"vdId":"NE"},"h_3":{"s":3,"n":"1","td":"23 &deg;C","sr":0,"srd":"0 mm","vsd":"8 km\/h","vg":14,"vgd":"14 km\/h","vd45":45,"vdId":"NE"},"h_6":{"s":3,"n":"0","td":"22 &deg;C","sr":0,"srd":"0 mm","vsd":"3 km\/h","vg":11,"vgd":"11 km\/h","vd45":90,"vdId":"E"},"h_9":{"s":1,"n":"0","td":"27 &deg;C","sr":0,"srd":"0 mm","vsd":"3 km\/h","vg":11,"vgd":"11 km\/h","vd45":180,"vdId":"S"},"h_12":{"s":1,"n":"0","td":"31 &deg;C","sr":0,"srd":"0 mm","vsd":"7 km\/h","vg":18,"vgd":"18 km\/h","vd45":180,"vdId":"S"},"h_15":{"s":1,"n":"0","td":"34 &deg;C","sr":0,"srd":"0 mm","vsd":"13 km\/h","vg":22,"vgd":"22 km\/h","vd45":180,"vdId":"S"},"h_18":{"s":2,"n":"0","td":"29 &deg;C","sr":0,"srd":"0 mm","vsd":"27 km\/h","vg":47,"vgd":"47 km\/h","vd45":45,"vdId":"NE"},"h_21":{"s":4,"n":"1","td":"26 &deg;C","sr":0,"srd":"0 mm","vsd":"25 km\/h","vg":54,"vgd":"54 km\/h","vd45":45,"vdId":"NE"}},"d_3":{"h_0":{"s":1,"n":"1","td":"24 &deg;C","sr":0,"srd":"0 mm","vsd":"17 km\/h","vg":40,"vgd":"40 km\/h","vd45":45,"vdId":"NE"},"h_3":{"s":1,"n":"1","td":"23 &deg;C","sr":0,"srd":"0 mm","vsd":"14 km\/h","vg":29,"vgd":"29 km\/h","vd45":45,"vdId":"NE"},"h_6":{"s":1,"n":"0","td":"21 &deg;C","sr":0,"srd":"0 mm","vsd":"10 km\/h","vg":22,"vgd":"22 km\/h","vd45":45,"vdId":"NE"},"h_9":{"s":1,"n":"0","td":"26 &deg;C","sr":0,"srd":"0 mm","vsd":"9 km\/h","vg":18,"vgd":"18 km\/h","vd45":225,"vdId":"SW"},"h_12":{"s":1,"n":"0","td":"31 &deg;C","sr":0,"srd":"0 mm","vsd":"12 km\/h","vg":22,"vgd":"22 km\/h","vd45":225,"vdId":"SW"},"h_15":{"s":1,"n":"0","td":"33 &deg;C","sr":0,"srd":"0 mm","vsd":"8 km\/h","vg":18,"vgd":"18 km\/h","vd45":225,"vdId":"SW"},"h_18":{"s":1,"n":"0","td":"31 &deg;C","sr":0,"srd":"0 mm","vsd":"3 km\/h","vg":11,"vgd":"11 km\/h","vd45":180,"vdId":"S"},"h_21":{"s":1,"n":"1","td":"25 &deg;C","sr":0,"srd":"0 mm","vsd":"8 km\/h","vg":14,"vgd":"14 km\/h","vd45":45,"vdId":"NE"}},"d_4":{"h_0":{"s":1,"n":"1","td":"23 &deg;C","sr":0,"srd":"0 mm","vsd":"13 km\/h","vg":22,"vgd":"22 km\/h","vd45":45,"vdId":"NE"},"h_3":{"s":1,"n":"1","td":"22 &deg;C","sr":0,"srd":"0 mm","vsd":"13 km\/h","vg":22,"vgd":"22 km\/h","vd45":45,"vdId":"NE"},"h_6":{"s":1,"n":"0","td":"20 &deg;C","sr":0,"srd":"0 mm","vsd":"11 km\/h","vg":18,"vgd":"18 km\/h","vd45":45,"vdId":"NE"},"h_9":{"s":1,"n":"0","td":"28 &deg;C","sr":0,"srd":"0 mm","vsd":"6 km\/h","vg":11,"vgd":"11 km\/h","vd45":225,"vdId":"SW"},"h_12":{"s":1,"n":"0","td":"33 &deg;C","sr":0,"srd":"0 mm","vsd":"11 km\/h","vg":22,"vgd":"22 km\/h","vd45":180,"vdId":"S"},"h_15":{"s":1,"n":"0","td":"34 &deg;C","sr":0,"srd":"0 mm","vsd":"4 km\/h","vg":14,"vgd":"14 km\/h","vd45":225,"vdId":"SW"},"h_18":{"s":4,"n":"0","td":"32 &deg;C","sr":0,"srd":"0 mm","vsd":"3 km\/h","vg":22,"vgd":"22 km\/h","vd45":90,"vdId":"E"},"h_21":{"s":4,"n":"1","td":"27 &deg;C","sr":0,"srd":"0 mm","vsd":"17 km\/h","vg":29,"vgd":"29 km\/h","vd45":45,"vdId":"NE"}},"d_5":{"h_0":{"s":1,"n":"1","td":"26 &deg;C","sr":0,"srd":"0 mm","vsd":"11 km\/h","vg":25,"vgd":"25 km\/h","vd45":45,"vdId":"NE"},"h_3":{"s":1,"n":"1","td":"23 &deg;C","sr":0,"srd":"0 mm","vsd":"11 km\/h","vg":22,"vgd":"22 km\/h","vd45":45,"vdId":"NE"},"h_6":{"s":1,"n":"0","td":"22 &deg;C","sr":0,"srd":"0 mm","vsd":"13 km\/h","vg":22,"vgd":"22 km\/h","vd45":45,"vdId":"NE"},"h_9":{"s":1,"n":"0","td":"30 &deg;C","sr":0,"srd":"0 mm","vsd":"4 km\/h","vg":11,"vgd":"11 km\/h","vd45":225,"vdId":"SW"},"h_12":{"s":1,"n":"0","td":"35 &deg;C","sr":0,"srd":"0 mm","vsd":"13 km\/h","vg":25,"vgd":"25 km\/h","vd45":180,"vdId":"S"},"h_15":{"s":3,"n":"0","td":"36 &deg;C","sr":0,"srd":"0 mm","vsd":"8 km\/h","vg":18,"vgd":"18 km\/h","vd45":225,"vdId":"SW"},"h_18":{"s":4,"n":"0","td":"33 &deg;C","sr":0,"srd":"0 mm","vsd":"10 km\/h","vg":18,"vgd":"18 km\/h","vd45":315,"vdId":"NW"},"h_21":{"s":1,"n":"1","td":"27 &deg;C","sr":0,"srd":"0 mm","vsd":"9 km\/h","vg":11,"vgd":"11 km\/h","vd45":45,"vdId":"NE"}},"d_6":{"h_0":{"s":1,"n":"1","td":"22 &deg;C","sr":0,"srd":"0 mm","vsd":"13 km\/h","vg":22,"vgd":"22 km\/h","vd45":45,"vdId":"NE"},"h_3":{"s":1,"n":"1","td":"20 &deg;C","sr":0,"srd":"0 mm","vsd":"11 km\/h","vg":22,"vgd":"22 km\/h","vd45":45,"vdId":"NE"},"h_6":{"s":1,"n":"0","td":"19 &deg;C","sr":0,"srd":"0 mm","vsd":"11 km\/h","vg":18,"vgd":"18 km\/h","vd45":45,"vdId":"NE"},"h_9":{"s":1,"n":"0","td":"27 &deg;C","sr":0,"srd":"0 mm","vsd":"7 km\/h","vg":14,"vgd":"14 km\/h","vd45":270,"vdId":"W"},"h_12":{"s":1,"n":"0","td":"31 &deg;C","sr":0,"srd":"0 mm","vsd":"11 km\/h","vg":18,"vgd":"18 km\/h","vd45":270,"vdId":"W"},"h_15":{"s":1,"n":"0","td":"33 &deg;C","sr":0,"srd":"0 mm","vsd":"10 km\/h","vg":18,"vgd":"18 km\/h","vd45":315,"vdId":"NW"},"h_18":{"s":1,"n":"0","td":"30 &deg;C","sr":0,"srd":"0 mm","vsd":"1 km\/h","vg":11,"vgd":"11 km\/h","vd45":45,"vdId":"NE"},"h_21":{"s":1,"n":"1","td":"26 &deg;C","sr":0,"srd":"0 mm","vsd":"11 km\/h","vg":25,"vgd":"25 km\/h","vd45":45,"vdId":"NE"}},"d_7":{"h_0":{"s":1,"n":"1","td":"22 &deg;C","sr":0,"srd":"0 mm","vsd":"10 km\/h","vg":18,"vgd":"18 km\/h","vd45":45,"vdId":"NE"},"h_3":{"s":1,"n":"1","td":"19 &deg;C","sr":0,"srd":"0 mm","vsd":"10 km\/h","vg":18,"vgd":"18 km\/h","vd45":45,"vdId":"NE"},"h_6":{"s":1,"n":"0","td":"18 &deg;C","sr":0,"srd":"0 mm","vsd":"10 km\/h","vg":18,"vgd":"18 km\/h","vd45":45,"vdId":"NE"},"h_9":{"s":1,"n":"0","td":"26 &deg;C","sr":0,"srd":"0 mm","vsd":"7 km\/h","vg":14,"vgd":"14 km\/h","vd45":225,"vdId":"SW"},"h_12":{"s":1,"n":"0","td":"30 &deg;C","sr":0,"srd":"0 mm","vsd":"15 km\/h","vg":25,"vgd":"25 km\/h","vd45":225,"vdId":"SW"},"h_15":{"s":2,"n":"0","td":"31 &deg;C","sr":0,"srd":"0 mm","vsd":"17 km\/h","vg":29,"vgd":"29 km\/h","vd45":270,"vdId":"W"},"h_18":{"s":2,"n":"0","td":"27 &deg;C","sr":0,"srd":"0 mm","vsd":"16 km\/h","vg":47,"vgd":"47 km\/h","vd45":315,"vdId":"NW"},"h_21":{"s":5,"n":"0","td":"23 &deg;C","sr":0.1,"srd":"0.1 mm","vsd":"10 km\/h","vg":25,"vgd":"25 km\/h","vd45":315,"vdId":"NW"}},"gustDesc":"Gust"}' />
+<div id="forecast" class="section">
+
+    <div class="section_header clearfix">
+        <h2>
+            Forecast        </h2>
+
+        <div class="round_buttons clearfix">
+            <span class="unroll">
+                <select id="date_selector" onchange="Detail.updateDateSelector(1, 7)">
+                    <option value="1"  selected="selected" >2023/09/02</option><option value="2" >2023/09/03</option><option value="3" >2023/09/04</option><option value="4" >2023/09/05</option><option value="5" >2023/09/06</option><option value="6" >2023/09/07</option><option value="7" >2023/09/08</option>
+
+                </select>
+            </span>
+
+            <span id="arrows">
+                <span class="round_button previous inactive"></span>
+                <a onclick="return Detail.changeForecast(Detail.cDay + 1, 1, 7)" class="round_button next"></a>
+            </span>
+        </div>
+        <!--/round_buttons-->
+    </div>
+
+    <div class="forecast_block">
+        <ul class="menu clearfix">
+            
+        <li id="d_1" class="active">
+            <a onclick="return Detail.changeForecast(1, 1, 7)">
+                Sa
+                <span class="big_ico big_ico_3"></span>
+                34 &deg;C
+            </a>
+        </li>
+    
+        <li id="d_2" >
+            <a onclick="return Detail.changeForecast(2, 1, 7)">
+                Su
+                <span class="big_ico big_ico_2"></span>
+                34 &deg;C
+            </a>
+        </li>
+    
+        <li id="d_3" >
+            <a onclick="return Detail.changeForecast(3, 1, 7)">
+                Mo
+                <span class="big_ico big_ico_1"></span>
+                33 &deg;C
+            </a>
+        </li>
+    
+        <li id="d_4" >
+            <a onclick="return Detail.changeForecast(4, 1, 7)">
+                Tu
+                <span class="big_ico big_ico_2"></span>
+                34 &deg;C
+            </a>
+        </li>
+    
+        <li id="d_5" >
+            <a onclick="return Detail.changeForecast(5, 1, 7)">
+                We
+                <span class="big_ico big_ico_2"></span>
+                36 &deg;C
+            </a>
+        </li>
+    
+        <li id="d_6" >
+            <a onclick="return Detail.changeForecast(6, 1, 7)">
+                Th
+                <span class="big_ico big_ico_1"></span>
+                33 &deg;C
+            </a>
+        </li>
+    
+        <li id="d_7" >
+            <a onclick="return Detail.changeForecast(7, 1, 7)">
+                Fr
+                <span class="big_ico big_ico_1"></span>
+                31 &deg;C
+            </a>
+        </li>
+            </ul>
+    </div>
+    
+    
+    <div class="forecast_mesto">
+
+        <table class="mesto-predpoved">
+            <thead>
+                <tr>
+                    <th>01:00</th><th>04:00</th><th>07:00</th><th>10:00</th><th>13:00</th><th>16:00</th><th>19:00</th><th>22:00</th>                </tr>
+            </thead>
+                        <tbody>
+
+                <tr>
+
+                    
+                    <td>
+                        <span id="s_0" class="big_ico big_ico_2_noc"></span>
+                        <b id="t_0" class="teplota">26 &deg;C</b> <br>
+                        <span id="sr_0" >0 mm</span><br>
+                        <span id="v_0" class="wind_ico arrow_45">NE</span><br>
+                        <span id="vs_0">13 km/h</span><br>
+                        <span id="w_0"></span>
+                    </td>
+                
+                    <td>
+                        <span id="s_3" class="big_ico big_ico_3_noc"></span>
+                        <b id="t_3" class="teplota">23 &deg;C</b> <br>
+                        <span id="sr_3" >0 mm</span><br>
+                        <span id="v_3" class="wind_ico arrow_45">NE</span><br>
+                        <span id="vs_3">9 km/h</span><br>
+                        <span id="w_3"></span>
+                    </td>
+                
+                    <td>
+                        <span id="s_6" class="big_ico big_ico_5"></span>
+                        <b id="t_6" class="teplota">22 &deg;C</b> <br>
+                        <span id="sr_6" >0 mm</span><br>
+                        <span id="v_6" class="wind_ico arrow_45">NE</span><br>
+                        <span id="vs_6">6 km/h</span><br>
+                        <span id="w_6"></span>
+                    </td>
+                
+                    <td>
+                        <span id="s_9" class="big_ico big_ico_3"></span>
+                        <b id="t_9" class="teplota">28 &deg;C</b> <br>
+                        <span id="sr_9" >0 mm</span><br>
+                        <span id="v_9" class="wind_ico arrow_225">SW</span><br>
+                        <span id="vs_9">8 km/h</span><br>
+                        <span id="w_9"></span>
+                    </td>
+                
+                    <td>
+                        <span id="s_12" class="big_ico big_ico_1"></span>
+                        <b id="t_12" class="teplota">32 &deg;C</b> <br>
+                        <span id="sr_12" >0 mm</span><br>
+                        <span id="v_12" class="wind_ico arrow_225">SW</span><br>
+                        <span id="vs_12">11 km/h</span><br>
+                        <span id="w_12"></span>
+                    </td>
+                
+                    <td>
+                        <span id="s_15" class="big_ico big_ico_2"></span>
+                        <b id="t_15" class="teplota">34 &deg;C</b> <br>
+                        <span id="sr_15" >0 mm</span><br>
+                        <span id="v_15" class="wind_ico arrow_270">W</span><br>
+                        <span id="vs_15">5 km/h</span><br>
+                        <span id="w_15"></span>
+                    </td>
+                
+                    <td>
+                        <span id="s_18" class="big_ico big_ico_4"></span>
+                        <b id="t_18" class="teplota">29 &deg;C</b> <br>
+                        <span id="sr_18" >0 mm</span><br>
+                        <span id="v_18" class="wind_ico arrow_45">NE</span><br>
+                        <span id="vs_18">25 km/h</span><br>
+                        <span id="w_18"></span>
+                    </td>
+                
+                    <td>
+                        <span id="s_21" class="big_ico big_ico_1_noc"></span>
+                        <b id="t_21" class="teplota">26 &deg;C</b> <br>
+                        <span id="sr_21" >0 mm</span><br>
+                        <span id="v_21" class="wind_ico arrow_0">N</span><br>
+                        <span id="vs_21">29 km/h</span><br>
+                        <span id="w_21"></span>
+                    </td>
+                                </tr>
+
+            </tbody>
+
+        </table>
+    </div>
+
+    </div>
+<!--/forecast section-->
+
+
+<div id="meteogram" class="section">
+    <div class="section_header clearfix">
+        <h2>Meteogram</h2>
+    </div>
+
+        <div class="meteogram_block" data-frame="https://www.ventusky.com/aside/chart.ajax.php?type={link}">
+        <ul class="menu clearfix">
+    
+    <li id="graph_temperature" class="active">
+        <a data-link="temp&amp;data=22;22;21;20;22;19;18;17;17;15;18;17;17;18:34;34;33;34;36;33;31;30;24;29;31;29;30;31:0;0.1;0;0;0;0;0.1;1.3;4;0.2;0.2;0;0;0:50;54;40;29;25;25;47;32;32;29;36;36;29;29:0;0;0;0;0;0;0;0;0;0;0;0;0;0&amp;time=1693602000&amp;days=14&amp;lat=40.1776108&amp;lon=44.5125839&amp;tz=Asia%2FYerevan&amp;short=Su%3BMo%3BTu%3BWe%3BTh%3BFr%3BSa;">
+            Temperature <br>(°C)        </a>
+    </li>
+    <li id="graph_rain" >
+        <a data-link="rain&amp;data=22;22;21;20;22;19;18;17;17;15;18;17;17;18:34;34;33;34;36;33;31;30;24;29;31;29;30;31:0;0.1;0;0;0;0;0.1;1.3;4;0.2;0.2;0;0;0:50;54;40;29;25;25;47;32;32;29;36;36;29;29:0;0;0;0;0;0;0;0;0;0;0;0;0;0&amp;time=1693602000&amp;days=14&amp;lat=40.1776108&amp;lon=44.5125839&amp;tz=Asia%2FYerevan&amp;short=Su%3BMo%3BTu%3BWe%3BTh%3BFr%3BSa;">
+            Precipitation <br>(mm)        </a>
+    </li>
+    <li id="graph_gust" >
+        <a data-link="gust&amp;data=22;22;21;20;22;19;18;17;17;15;18;17;17;18:34;34;33;34;36;33;31;30;24;29;31;29;30;31:0;0.1;0;0;0;0;0.1;1.3;4;0.2;0.2;0;0;0:50;54;40;29;25;25;47;32;32;29;36;36;29;29:0;0;0;0;0;0;0;0;0;0;0;0;0;0&amp;time=1693602000&amp;days=14&amp;lat=40.1776108&amp;lon=44.5125839&amp;tz=Asia%2FYerevan&amp;short=Su%3BMo%3BTu%3BWe%3BTh%3BFr%3BSa;">
+            Gust <br>(km/h)        </a>
+    </li>
+    
+    <li id="graph_snow" >
+        <a data-link="snow&amp;data=22;22;21;20;22;19;18;17;17;15;18;17;17;18:34;34;33;34;36;33;31;30;24;29;31;29;30;31:0;0.1;0;0;0;0;0.1;1.3;4;0.2;0.2;0;0;0:50;54;40;29;25;25;47;32;32;29;36;36;29;29:0;0;0;0;0;0;0;0;0;0;0;0;0;0&amp;time=1693602000&amp;days=14&amp;lat=40.1776108&amp;lon=44.5125839&amp;tz=Asia%2FYerevan&amp;short=Su%3BMo%3BTu%3BWe%3BTh%3BFr%3BSa;">
+            New snow <br>(cm)        </a>
+    </li>
+    </ul>
+
+
+<div class="chart"><div class="svg-container"><svg width="100%" height="100%"><defs><pattern id="gr_vert" width="7.14%" height="100%" patternUnits="userSpaceOnUse"><line x1="0%" y1="0%" x2="0%" y2="100%"/></pattern></defs><rect x="3.57%" width="100%" height="100%" fill="url(#gr_vert)" /><g class="line_min"><line x1="3.57%" y1="60%"
+                            x2="10.71%" y2="60%"
+                            style="stroke:#3697d1;"/><line x1="10.71%" y1="60%"
+                            x2="17.85%" y2="63.33%"
+                            style="stroke:#3697d1;"/><line x1="17.85%" y1="63.33%"
+                            x2="24.99%" y2="66.67%"
+                            style="stroke:#3697d1;"/><line x1="24.99%" y1="66.67%"
+                            x2="32.13%" y2="60%"
+                            style="stroke:#3697d1;"/><line x1="32.13%" y1="60%"
+                            x2="39.27%" y2="70%"
+                            style="stroke:#3697d1;"/><line x1="39.27%" y1="70%"
+                            x2="46.41%" y2="73.33%"
+                            style="stroke:#3697d1;"/><line x1="46.41%" y1="73.33%"
+                            x2="53.55%" y2="76.67%"
+                            style="stroke:#3697d1;"/><line x1="53.55%" y1="76.67%"
+                            x2="60.69%" y2="76.67%"
+                            style="stroke:#3697d1;"/><line x1="60.69%" y1="76.67%"
+                            x2="67.83%" y2="83.33%"
+                            style="stroke:#3697d1;"/><line x1="67.83%" y1="83.33%"
+                            x2="74.97%" y2="73.33%"
+                            style="stroke:#3697d1;"/><line x1="74.97%" y1="73.33%"
+                            x2="82.11%" y2="76.67%"
+                            style="stroke:#3697d1;"/><line x1="82.11%" y1="76.67%"
+                            x2="89.25%" y2="76.67%"
+                            style="stroke:#3697d1;"/><line x1="89.25%" y1="76.67%"
+                            x2="96.39%" y2="73.33%"
+                            style="stroke:#3697d1;"/></g><g class="circle_min"><circle cx="3.57%" cy="60%" r="14"
+                              style="fill: #3697d1"/><circle cx="10.71%" cy="60%" r="14"
+                              style="fill: #3697d1"/><circle cx="17.85%" cy="63.33%" r="14"
+                              style="fill: #3697d1"/><circle cx="24.99%" cy="66.67%" r="14"
+                              style="fill: #3697d1"/><circle cx="32.13%" cy="60%" r="14"
+                              style="fill: #3697d1"/><circle cx="39.27%" cy="70%" r="14"
+                              style="fill: #3697d1"/><circle cx="46.41%" cy="73.33%" r="14"
+                              style="fill: #3697d1"/><circle cx="53.55%" cy="76.67%" r="14"
+                              style="fill: #3697d1"/><circle cx="60.69%" cy="76.67%" r="14"
+                              style="fill: #3697d1"/><circle cx="67.83%" cy="83.33%" r="14"
+                              style="fill: #3697d1"/><circle cx="74.97%" cy="73.33%" r="14"
+                              style="fill: #3697d1"/><circle cx="82.11%" cy="76.67%" r="14"
+                              style="fill: #3697d1"/><circle cx="89.25%" cy="76.67%" r="14"
+                              style="fill: #3697d1"/><circle cx="96.39%" cy="73.33%" r="14"
+                              style="fill: #3697d1"/></g><g class="line_number"><text x="3.57%" y="60%" dy="5px">22</text><text x="10.71%" y="60%" dy="5px">22</text><text x="17.85%" y="63.33%" dy="5px">21</text><text x="24.99%" y="66.67%" dy="5px">20</text><text x="32.13%" y="60%" dy="5px">22</text><text x="39.27%" y="70%" dy="5px">19</text><text x="46.41%" y="73.33%" dy="5px">18</text><text x="53.55%" y="76.67%" dy="5px">17</text><text x="60.69%" y="76.67%" dy="5px">17</text><text x="67.83%" y="83.33%" dy="5px">15</text><text x="74.97%" y="73.33%" dy="5px">18</text><text x="82.11%" y="76.67%" dy="5px">17</text><text x="89.25%" y="76.67%" dy="5px">17</text><text x="96.39%" y="73.33%" dy="5px">18</text></g><g class="line_max"><line x1="3.57%" y1="20%"
+                            x2="10.71%" y2="20%"
+                            style="stroke:#d13636;"/><line x1="10.71%" y1="20%"
+                            x2="17.85%" y2="23.33%"
+                            style="stroke:#d13636;"/><line x1="17.85%" y1="23.33%"
+                            x2="24.99%" y2="20%"
+                            style="stroke:#d13636;"/><line x1="24.99%" y1="20%"
+                            x2="32.13%" y2="13.33%"
+                            style="stroke:#d13636;"/><line x1="32.13%" y1="13.33%"
+                            x2="39.27%" y2="23.33%"
+                            style="stroke:#d13636;"/><line x1="39.27%" y1="23.33%"
+                            x2="46.41%" y2="30%"
+                            style="stroke:#d13636;"/><line x1="46.41%" y1="30%"
+                            x2="53.55%" y2="33.33%"
+                            style="stroke:#d13636;"/><line x1="53.55%" y1="33.33%"
+                            x2="60.69%" y2="53.33%"
+                            style="stroke:#d13636;"/><line x1="60.69%" y1="53.33%"
+                            x2="67.83%" y2="36.67%"
+                            style="stroke:#d13636;"/><line x1="67.83%" y1="36.67%"
+                            x2="74.97%" y2="30%"
+                            style="stroke:#d13636;"/><line x1="74.97%" y1="30%"
+                            x2="82.11%" y2="36.67%"
+                            style="stroke:#d13636;"/><line x1="82.11%" y1="36.67%"
+                            x2="89.25%" y2="33.33%"
+                            style="stroke:#d13636;"/><line x1="89.25%" y1="33.33%"
+                            x2="96.39%" y2="30%"
+                            style="stroke:#d13636;"/></g><g class="circle_max"><circle cx="3.57%" cy="20%" r="14"
+                              style="fill: #d13636"/><circle cx="10.71%" cy="20%" r="14"
+                              style="fill: #d13636"/><circle cx="17.85%" cy="23.33%" r="14"
+                              style="fill: #d13636"/><circle cx="24.99%" cy="20%" r="14"
+                              style="fill: #d13636"/><circle cx="32.13%" cy="13.33%" r="14"
+                              style="fill: #d13636"/><circle cx="39.27%" cy="23.33%" r="14"
+                              style="fill: #d13636"/><circle cx="46.41%" cy="30%" r="14"
+                              style="fill: #d13636"/><circle cx="53.55%" cy="33.33%" r="14"
+                              style="fill: #d13636"/><circle cx="60.69%" cy="53.33%" r="14"
+                              style="fill: #d13636"/><circle cx="67.83%" cy="36.67%" r="14"
+                              style="fill: #d13636"/><circle cx="74.97%" cy="30%" r="14"
+                              style="fill: #d13636"/><circle cx="82.11%" cy="36.67%" r="14"
+                              style="fill: #d13636"/><circle cx="89.25%" cy="33.33%" r="14"
+                              style="fill: #d13636"/><circle cx="96.39%" cy="30%" r="14"
+                              style="fill: #d13636"/></g><g class="line_number"><text x="3.57%" y="20%" dy="5px">34</text><text x="10.71%" y="20%" dy="5px">34</text><text x="17.85%" y="23.33%" dy="5px">33</text><text x="24.99%" y="20%" dy="5px">34</text><text x="32.13%" y="13.33%" dy="5px">36</text><text x="39.27%" y="23.33%" dy="5px">33</text><text x="46.41%" y="30%" dy="5px">31</text><text x="53.55%" y="33.33%" dy="5px">30</text><text x="60.69%" y="53.33%" dy="5px">24</text><text x="67.83%" y="36.67%" dy="5px">29</text><text x="74.97%" y="30%" dy="5px">31</text><text x="82.11%" y="36.67%" dy="5px">29</text><text x="89.25%" y="33.33%" dy="5px">30</text><text x="96.39%" y="30%" dy="5px">31</text></g></svg></div><div class="y-container" style="height:116.66666666667%;"><table><tr><td>40</td></tr><tr><td>35</td></tr><tr><td>30</td></tr><tr><td>25</td></tr><tr><td>20</td></tr><tr><td>15</td></tr><tr><td>10</td></tr></table></div><div class="x-container"><table><tr><td>Sa<br><span>02</span></td><td>Su<br><span>03</span></td><td>Mo<br><span>04</span></td><td>Tu<br><span>05</span></td><td>We<br><span>06</span></td><td>Th<br><span>07</span></td><td>Fr<br><span>08</span></td><td>Sa<br><span>09</span></td><td>Su<br><span>10</span></td><td>Mo<br><span>11</span></td><td>Tu<br><span>12</span></td><td>We<br><span>13</span></td><td>Th<br><span>14</span></td><td>Fr<br><span>15</span></td></tr></table></div></div>    </div>
+    </div>
+<!--/meteogram section-->
+
+
+<div id="aqi_section" class="section">
+    <div class="section_header clearfix">
+        <h2>
+            Air quality (AQI)
+        </h2>
+    </div>
+        <div id="aqi_chart_section" data-aqi="https://www.ventusky.com/aside/chart_aqi.ajax.php?lat=40.1776108&amp;lon=44.5125839&amp;tz=Asia/Yerevan"></div>
+        <br />
+    <p class="note">
+        <strong>Air quality index (marked as AQI)</strong> is developed by Environmental Protection Agency. Values over 300 represents hazardous air quality, between 200-300 very unhealthy, 150-200 unhealthy, 100-150 unhealthy for sensitive groups and below 100 or rather below 50 the air quality is good.     </p>
+
+
+    <div id="aq_section" style="display: none;" data-aq="40.1776108;44.5125839">
+        <div class="section_header clearfix">
+            <h3>
+                Weather report from station            </h3>
+            <p class="note">
+                Provided by                <a href="http://www.aqicn.org/" target="_blank">aqicn.org</a>
+            </p>
+        </div>
+        <div class="info_tables">
+            <div class="info_table">
+                <table>
+                    <tr>
+                        <td>
+                            <div class="pie" style="" id="aq_pie"></div>
+                            <div class="pie_inside" id="aq_val">
+                                <br />
+                            </div>
+                            <strong class="quality-text-0" style="display: none;" id="aq_i0">
+                                Good                            </strong>
+                            <strong class="quality-text-1" style="display: none;" id="aq_i1">
+                                Moderate                            </strong>
+                            <strong class="quality-text-2" style="display: none;" id="aq_i2">
+                                Unhealthy for Sensitive Groups                            </strong>
+                            <strong class="quality-text-3" style="display: none;" id="aq_i3">
+                                Unhealthy                            </strong>
+                            <strong class="quality-text-4" style="display: none;" id="aq_i4">
+                                Very Unhealthy                            </strong>
+                            <strong class="quality-text-5" style="display: none;" id="aq_i5">
+                                Hazardous                            </strong>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <!--/info_table-->
+            <div class="info_table spacer">&nbsp;</div>
+            <div class="info_table">
+                <table id="ai_info_table"></table>
+            </div>
+            <!--/info_table-->
+        </div>
+        <!--/info_tables-->
+        <p class="note">
+            <span id="ai_info">
+                Weather report from station;Distance            </span>
+        </p>
+    </div>
+    <!--/aq_section-->
+
+</div>
+<!--/aqi_section section-->
+
+
+
+<div id="astro" class="section" data-astro="40.1776108;44.5125839;1693592713;240;0">
+    <!-- V atributu data-astro jsou souradnice, pak timestamp, pocet minut posunu oproti UTC, day-light daving type (see PHP above) -->
+    <div class="section_header clearfix">
+        <h2>
+            Sun and Moon        </h2>
+
+        <div class="round_buttons clearfix">
+
+            <span class="unroll">
+                <select id="astro-date">
+                    <option value="1693592713">2023/09/01</option><option value="1693641600">2023/09/02</option><option value="1693728000">2023/09/03</option><option value="1693814400">2023/09/04</option><option value="1693900800">2023/09/05</option><option value="1693987200">2023/09/06</option>                </select>
+            </span>
+
+            <a href="#" id="astro-date-prev" class="round_button previous inactive"></a>
+            <a href="#" id="astro-date-next" class="round_button next"></a>
+
+        </div>
+
+    </div>
+
+    <div id="astro-sun"></div>
+    <table>
+        <tr>
+            <td class="udaje">
+                Heading:
+                <span id="astro-sun-azimuth"></span>
+            </td>
+            <td class="udaje_r">
+                Time:
+                <span id="astro-sun-date"></span>
+                <span id="astro-sun-time"></span>
+            </td>
+        </tr>
+        <tr>
+            <td class="udaje">
+                Phase:
+                <span id="astro-sun-phase"></span>
+            </td>
+            <td class="udaje_r">
+                Altitude:
+                <span id="astro-sun-altitude"></span>
+            </td>
+        </tr>
+    </table>
+
+    <br />
+    <br />
+
+    <div id="astro-moon"></div>
+    <table>
+        <tr>
+            <td class="udaje">
+                Heading:
+                <span id="astro-moon-azimuth"></span>
+            </td>
+            <td class="udaje_r">
+                Time:
+                <span id="astro-moon-date"></span>
+                <span id="astro-moon-time"></span>
+            </td>
+        </tr>
+        <tr>
+            <td class="udaje">
+                Illumination:
+                <span id="astro-moon-fraction"></span>
+            </td>
+            <td class="udaje_r">
+                Altitude:
+                <span id="astro-moon-altitude"></span>
+            </td>
+        </tr>
+    </table>
+
+
+    <br />
+    <br />
+
+
+    <table id="astro-moon-table">
+        <tr>
+            <td>
+                Date            </td>
+            <td>
+                rise            </td>
+            <td>
+                set            </td>
+            <td>
+                rise            </td>
+            <td>
+                Illumination            </td>
+        </tr>
+    </table>
+
+    <br />
+    <br />
+
+    <table id="astro-sun-table">
+        <tr>
+            <td>
+                Phase            </td>
+            <td>
+                Time            </td>
+            <td>
+                Length            </td>
+        </tr>
+    </table>
+</div>
+
+
+            </div>
+        </div>    
+     
+
+ 
+</body>
+</html>

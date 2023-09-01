@@ -21,7 +21,7 @@ class ScrapePetrol(BaseScrape):
             data_dict['country']= country
             print(data_dict)
 
-        # PostToAPI('http://127.0.0.1:8000/add_petrol/', json.dumps(data_dict)).api_post()
+        PostToAPI('http://127.0.0.1:8000/add_petrol/', json.dumps(data_dict)).api_post()
 
 if __name__=='__main__':
     ScrapePetrol('tmp/belarus_petrol_price.html').scrape('BYN')

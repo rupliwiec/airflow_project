@@ -5,9 +5,9 @@ class Population:
         self.country = country
     
     def fetch_population(self):
-        url = f'https://data.worldbank.org/country/{self.country}?view=chart'
+        url = f'https://en.wikipedia.org/wiki/{self.country}'
         FetchData(url=url, file_name=f'{self.country}_total_population').run()
 
 if __name__=='__main__':
-    Population('belarus').fetch_population()
-    Population('armenia').fetch_population()
+    Population('Belarus').fetch_population()
+    Population('Armenia').fetch_population()

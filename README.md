@@ -1,1 +1,1 @@
-# airflow_project
+In this project I use airflow to fetch and scrape data on Belarus and Armenia. Such information includes petrol prices, weather in capital cities and total population.

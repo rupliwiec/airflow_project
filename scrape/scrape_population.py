@@ -15,4 +15,5 @@ class ScrapePopulation(BaseScrape):
         PostToAPI('http://127.0.0.1:8000/add_population/', json.dumps(data_dict)).api_post()
 
 if __name__=='__main__':
-    ScrapePopulation('tmp/Belarus_total_population.html').scrape('Belarus')
+    ScrapePopulation('tmp/Belarus_total_population.html').scrape('BYN')
+    ScrapePopulation('tmp/Armenia_total_population.html').scrape('ARM')

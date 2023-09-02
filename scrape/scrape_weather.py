@@ -5,7 +5,7 @@ from libraries.post_to_api import PostToAPI
 
 class ScrapeWeather(BaseScrape):
 
-    def scrape(self, country: str):
+    def scrape(self, city: str):
         soup = self.reading_file()
         elements = []
         temperature = soup.find('td', {"class": "temperature"}).text
@@ -25,7 +25,7 @@ class ScrapeWeather(BaseScrape):
                 key = str(elements[index-1].lower()).replace(" ", "_")
                 data_dict[key] = float(elements[index].split(' ')[0])
                 data_dict[f'{key}_unit'] = str(elements[index].split(' ')[1])
-        data_dict['country'] = country
+        data_dict['city'] = city
 
         PostToAPI('http://127.0.0.1:8000/add_weather/', json.dumps(data_dict)).api_post()
 

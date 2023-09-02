@@ -25,3 +25,4 @@ class ScrapePetrol(BaseScrape):
 
 if __name__=='__main__':
     ScrapePetrol('tmp/belarus_petrol_price.html').scrape('BYN')
+    ScrapePetrol('tmp/armenia_petrol_price.html').scrape('ARM')

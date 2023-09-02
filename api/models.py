@@ -39,3 +39,13 @@ class Weather(Base):
 
     __table_args__ = {'schema': 'api_data'}
 
+class Population(Base):
+    __tablename__ = "population"
+
+    id= Column(INTEGER, primary_key=True)
+    total_population= Column(INTEGER)
+    country= Column(String(3))
+    created_at= Column(DateTime, default=datetime.datetime.utcnow, nullable=False)
+    updated_at= Column(DateTime, default=datetime.datetime.utcnow, nullable=False)
+
+    __table_args__ = {'schema': 'api_data'}

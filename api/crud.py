@@ -12,13 +12,13 @@ def create_petrol(db: Session, petrol: schema.PetrolCreate):
     db.refresh(db_item)
     return db_item
 
-def get_petrol(db: Session, petrol_id: str):
+def get_petrol(db: Session, petrol_id: int):
     return db.query(models.Petrol).filter(models.Petrol.id == petrol_id).first()
 
 def get_petrols(db: Session, skip: int = 0, limit = 50):
     return db.query(models.Petrol).offset(skip).limit(limit).all()
 
-def update_petrol(petrol_id: str, db: Session, updated_petrol: schema.PetrolCreate):
+def update_petrol(petrol_id: int, db: Session, updated_petrol: schema.PetrolCreate):
     petrol_to_update = db.query(models.Petrol).filter(models.Petrol.id == petrol_id).first()
     petrol_to_update.usd_price_per_litre = updated_petrol.usd_price_per_litre
     petrol_to_update.usd_price_per_gallon = updated_petrol.usd_price_per_gallon
@@ -29,7 +29,7 @@ def update_petrol(petrol_id: str, db: Session, updated_petrol: schema.PetrolCrea
     db.commit()
     return petrol_to_update
 
-def delete_petrol(petrol_id: str, db: Session):
+def delete_petrol(petrol_id: int, db: Session):
     petrol_item = db.query(models.Petrol).filter(models.Petrol.id == petrol_id).first()
     if petrol_item is None:
         raise HTTPException(status_code=404, detail="Petrol value not found")
@@ -45,13 +45,13 @@ def create_weather(db: Session, weather: schema.WeatherCreate):
     db.refresh(db_item)
     return db_item
 
-def get_weather(db: Session, weather_id: str):
+def get_weather(db: Session, weather_id: int):
     return db.query(models.Weather).filter(models.Weather.id == weather_id).first()
 
 def get_weathers(db: Session, skip: int = 0, limit = 50):
     return db.query(models.Weather).offset(skip).limit(limit).all()
 
-def update_weather(weather_id: str, db: Session, updated_weather: schema.WeatherCreate):
+def update_weather(weather_id: int, db: Session, updated_weather: schema.WeatherCreate):
     weather_to_update = db.query(models.Weather).filter(models.Weather.id == weather_id).first()
     weather_to_update.temperature = updated_weather.temperature
     weather_to_update.temperature_unit = updated_weather.temperature_unit
@@ -70,7 +70,7 @@ def update_weather(weather_id: str, db: Session, updated_weather: schema.Weather
     db.commit()
     return weather_to_update
 
-def delete_weather(weather_id: str, db: Session):
+def delete_weather(weather_id: int, db: Session):
     weather_item = db.query(models.Weather).filter(models.Weather.id == weather_id).first()
     if weather_item is None:
         raise HTTPException(status_code=404, detail="Weather value not found")
@@ -86,13 +86,13 @@ def create_exchange_rate(db: Session, exchange: schema.ExchangeRateCreate):
     db.refresh(db_item)
     return db_item
 
-def get_exchange_rate(db: Session, exchange_rate_id: str):
+def get_exchange_rate(db: Session, exchange_rate_id: int):
     return db.query(models.ExchangeRate).filter(models.ExchangeRate.id == exchange_rate_id).first()
 
 def get_exchange_rates(db: Session, skip: int = 0, limit = 50):
     return db.query(models.ExchangeRate).offset(skip).limit(limit).all()
 
-def update_exchange_rate(exchange_rate_id: str, db: Session, updated_exchange_rate: schema.ExchangeRateCreate):
+def update_exchange_rate(exchange_rate_id: int, db: Session, updated_exchange_rate: schema.ExchangeRateCreate):
     exchange_rate_to_update = db.query(models.ExchangeRate).filter(models.ExchangeRate.id == exchange_rate_id).first()
     exchange_rate_to_update.usd_rate = updated_exchange_rate.usd_rate
     exchange_rate_to_update.euro_rate = updated_exchange_rate.euro_rate
@@ -101,7 +101,7 @@ def update_exchange_rate(exchange_rate_id: str, db: Session, updated_exchange_ra
     db.commit()
     return exchange_rate_to_update
 
-def delete_exchange_rate(exchange_rate_id: str, db: Session):
+def delete_exchange_rate(exchange_rate_id: int, db: Session):
     exchange_rate_item = db.query(models.ExchangeRate).filter(models.ExchangeRate.id == exchange_rate_id).first()
     if exchange_rate_item is None:
         raise HTTPException(status_code=404, detail="ExchangeRate value not found")
@@ -116,13 +116,13 @@ def create_population(db: Session, population: schema.PopulationCreate):
     db.refresh(db_item)
     return db_item
 
-def get_population(db: Session, population_id: str):
+def get_population(db: Session, population_id: int):
     return db.query(models.Population).filter(models.Population.id == population_id).first()
 
 def get_populations(db: Session, skip: int = 0, limit = 50):
     return db.query(models.Population).offset(skip).limit(limit).all()
 
-def update_population(db: Session, population_id: str, updated_population: schema.PopulationCreate):
+def update_population(db: Session, population_id: int, updated_population: schema.PopulationCreate):
     population_to_update = db.query(models.Population).filter(models.Population.id == population_id).first()
     population_to_update.total_population = updated_population.total_population
     population_to_update.country = updated_population.country
@@ -130,7 +130,7 @@ def update_population(db: Session, population_id: str, updated_population: schem
     db.commit()
     return population_to_update
 
-def delete_population(db: Session, population_id: str):
+def delete_population(db: Session, population_id: int):
     population_item = db.query(models.Population).filter(models.Population.id == population_id).first()
     if population_item is None:
         raise HTTPException(status_code=404, detail="Population value not found")

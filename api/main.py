@@ -49,3 +49,28 @@ def put_petrol(petrol_id: int, updated_petrol: schema.PetrolCreate, db: Session 
 @app.delete("/delete_petrol/{petrol_id}", tags=["petrol"])
 def delete_petrol(petrol_id: int, db: Session = Depends(get_db)):
     return crud.delete_petrol(petrol_id=petrol_id, db=db)
+
+
+@app.post("/add_weather/", response_model=schema.Weather, tags=["weather"])
+def add_weather(weather: schema.WeatherCreate, db: Session = Depends(get_db)):
+    return crud.create_weather(db=db, weather=weather)
+
+@app.get("/weathers/", response_model=list[schema.Weather], tags=["weather"])
+def read_weathers(skip: int = 0, limit: int = 50, db: Session = Depends(get_db)):
+    weathers = crud.get_weathers(db, skip=skip, limit=limit)
+    return weathers
+
+@app.get("/weather/{weather_id}", response_model=schema.Weather, tags=["weather"])
+def read_weather(weather_id: str, db: Session = Depends(get_db)):
+    db_weather = crud.get_weather(db=db, weather_id=weather_id)
+    if db_weather is None:
+        raise HTTPException(status_code=404, detail="Weather values not found")
+    return db_weather
+
+@app.put("/update_weather/{weather_id}",response_model=schema.Weather, tags=["weather"])
+def put_weather(weather_id: int, updated_weather: schema.WeatherCreate, db: Session = Depends(get_db)):
+    return crud.update_weather(weather_id=weather_id, db=db, updated_weather=updated_weather)
+
+@app.delete("/delete_weather/{weather_id}", tags=["weather"])
+def delete_weather(weather_id: str, db: Session = Depends(get_db)):
+    return crud.delete_weather(weather_id=weather_id, db=db)

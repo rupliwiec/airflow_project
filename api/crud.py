@@ -36,3 +36,45 @@ def delete_petrol(petrol_id: str, db: Session):
     db.delete(petrol_item)
     db.commit()
     return {"delete": True, "Item": petrol_item}
+
+
+def create_weather(db: Session, weather: schema.WeatherCreate):
+    db_item = models.Weather(**weather.dict())
+    db.add(db_item)
+    db.commit()
+    db.refresh(db_item)
+    return db_item
+
+def get_weather(db: Session, weather_id: str):
+    return db.query(models.Weather).filter(models.Weather.id == weather_id).first()
+
+def get_weathers(db: Session, skip: int = 0, limit = 50):
+    return db.query(models.Weather).offset(skip).limit(limit).all()
+
+def update_weather(weather_id: str, db: Session, updated_weather: schema.WeatherCreate):
+    weather_to_update = db.query(models.Weather).filter(models.Weather.id == weather_id).first()
+    weather_to_update.temperature = updated_weather.temperature
+    weather_to_update.temperature_unit = updated_weather.temperature_unit
+    weather_to_update.wind = updated_weather.wind
+    weather_to_update.wind_unit = updated_weather.wind_unit
+    weather_to_update.visibility = updated_weather.visibility
+    weather_to_update.visibility_unit = updated_weather.visibility_unit
+    weather_to_update.humidity = updated_weather.humidity
+    weather_to_update.humidity_unit = updated_weather.humidity_unit
+    weather_to_update.clouds = updated_weather.clouds
+    weather_to_update.clouds_unit = updated_weather.clouds_unit
+    weather_to_update.cloud_base = updated_weather.cloud_base
+    weather_to_update.cloud_base_unit = updated_weather.cloud_base_unit
+    weather_to_update.country = updated_weather.country
+    weather_to_update.updated_at = datetime.datetime.utcnow()
+    db.commit()
+    return weather_to_update
+
+def delete_weather(weather_id: str, db: Session):
+    weather_item = db.query(models.Weather).filter(models.Weather.id == weather_id).first()
+    if weather_item is None:
+        raise HTTPException(status_code=404, detail="Weather value not found")
+    db.delete(weather_item)
+    db.commit()
+    return {"delete": True, "Item": weather_item}
+

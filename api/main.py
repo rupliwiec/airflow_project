@@ -61,7 +61,7 @@ def read_weathers(skip: int = 0, limit: int = 50, db: Session = Depends(get_db))
     return weathers
 
 @app.get("/weather/{weather_id}", response_model=schema.Weather, tags=["weather"])
-def read_weather(weather_id: str, db: Session = Depends(get_db)):
+def read_weather(weather_id: int, db: Session = Depends(get_db)):
     db_weather = crud.get_weather(db=db, weather_id=weather_id)
     if db_weather is None:
         raise HTTPException(status_code=404, detail="Weather values not found")
@@ -72,5 +72,29 @@ def put_weather(weather_id: int, updated_weather: schema.WeatherCreate, db: Sess
     return crud.update_weather(weather_id=weather_id, db=db, updated_weather=updated_weather)
 
 @app.delete("/delete_weather/{weather_id}", tags=["weather"])
-def delete_weather(weather_id: str, db: Session = Depends(get_db)):
+def delete_weather(weather_id: int, db: Session = Depends(get_db)):
     return crud.delete_weather(weather_id=weather_id, db=db)
+
+@app.post("/add_exchange_rates/", response_model=schema.ExchangeRate, tags=["exchange rate"])
+def add_exchange_rates(exchanges: schema.ExchangeRateCreate, db: Session = Depends(get_db)):
+    return crud.create_exchange_rate(db=db, exchange=exchanges)
+
+@app.get("/exchange_rates/", response_model=list[schema.ExchangeRate], tags=["exchange rate"])
+def read_exchange_rates(skip: int = 0, limit: int = 50, db: Session = Depends(get_db)):
+    exchanges = crud.get_exchange_rates(db, skip=skip, limit=limit)
+    return exchanges
+
+@app.get("/exchange_rate/{exchange_rate_id}", response_model=schema.ExchangeRate, tags=["exchange rate"])
+def read_exchange_rate(exchange_rate_id: int, db: Session = Depends(get_db)):
+    db_exchange_rate = crud.get_exchange_rate(db=db, exchange_rate_id=exchange_rate_id)
+    if db_exchange_rate is None:
+        raise HTTPException(status_code=404, detail="Exchange rate values not found")
+    return db_exchange_rate
+
+@app.put("/update_exchange_rate/{exchange_rate_id}",response_model=schema.ExchangeRate, tags=["exchange rate"])
+def put_exchange_rate(exchange_rate_id: int, updated_exchange_rate: schema.ExchangeRateCreate, db: Session = Depends(get_db)):
+    return crud.update_exchange_rate(exchange_rate_id=exchange_rate_id, db=db, updated_exchange_rate=updated_exchange_rate)
+
+@app.delete("/delete_exchange_rate/{exchange_rate_id}", tags=["exchange rate"])
+def delete_exchange_rate(exchange_rate_id: int, db: Session = Depends(get_db)):
+    return crud.delete_exchange_rate(exchange_rate_id=exchange_rate_id, db=db)

@@ -9,6 +9,7 @@ from fetch.population import Population
 from scrape.scrape_petrol import ScrapePetrol
 from scrape.scrape_weather import ScrapeWeather
 from scrape.scrape_population import ScrapePopulation
+from scripts.clean_up import clean_up
 
 dag = DAG(
     dag_id= 'hourly_tasks_dag',
@@ -34,9 +35,9 @@ run_fetch_minsk_weather = PythonOperator(
     python_callable=Weather('minsk').fetch_weather
 )
 
-run_fetch_erevan_weather = PythonOperator(
+run_fetch_yerevan_weather = PythonOperator(
     dag=dag,
-    task_id= 'run_fetch_erevan_weather',
+    task_id= 'run_fetch_yerevan_weather',
     python_callable=Weather('yerevan').fetch_weather
 )
 
@@ -93,3 +94,16 @@ run_scrape_armenia_population = PythonOperator(
     python_callable=ScrapePopulation('tmp/Armenia_total_population.html').scrape,
     op_kwargs={'country': 'ARM'},
 )
+
+run_clean_up = PythonOperator(
+    dag=dag,
+    task_id = 'run_clean_up',
+    python_callable=clean_up.clean_up
+)
+
+run_fetch_belarus_petrol >> run_scrape_belarus_petrol >> run_clean_up
+run_fetch_armenia_petrol >> run_scrape_armenia_petrol >> run_clean_up
+run_fetch_minsk_weather >> run_scrape_minsk_weather >> run_clean_up
+run_fetch_yerevan_weather >> run_scrape_yerevan_weather >> run_clean_up
+run_fetch_belarus_population >> run_scrape_belarus_population >> run_clean_up
+run_fetch_armenia_population >> run_scrape_armenia_population >> run_clean_up

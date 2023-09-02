@@ -108,3 +108,32 @@ def delete_exchange_rate(exchange_rate_id: str, db: Session):
     db.delete(exchange_rate_item)
     db.commit()
     return {"delete": True, "Item": exchange_rate_item}
+
+def create_population(db: Session, population: schema.PopulationCreate):
+    db_item = models.Population(**population.dict())
+    db.add(db_item)
+    db.commit()
+    db.refresh(db_item)
+    return db_item
+
+def get_population(db: Session, population_id: str):
+    return db.query(models.Population).filter(models.Population.id == population_id).first()
+
+def get_populations(db: Session, skip: int = 0, limit = 50):
+    return db.query(models.Population).offset(skip).limit(limit).all()
+
+def update_population(db: Session, population_id: str, updated_population: schema.PopulationCreate):
+    population_to_update = db.query(models.Population).filter(models.Population.id == population_id).first()
+    population_to_update.total_population = updated_population.total_population
+    population_to_update.country = updated_population.country
+    population_to_update.updated_at = datetime.datetime.utcnow()
+    db.commit()
+    return population_to_update
+
+def delete_population(db: Session, population_id: str):
+    population_item = db.query(models.Population).filter(models.Population.id == population_id).first()
+    if population_item is None:
+        raise HTTPException(status_code=404, detail="Population value not found")
+    db.delete(population_item)
+    db.commit()
+    return {"delete": True, "Item": population_item}

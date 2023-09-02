@@ -98,3 +98,28 @@ def put_exchange_rate(exchange_rate_id: int, updated_exchange_rate: schema.Excha
 @app.delete("/delete_exchange_rate/{exchange_rate_id}", tags=["exchange rate"])
 def delete_exchange_rate(exchange_rate_id: int, db: Session = Depends(get_db)):
     return crud.delete_exchange_rate(exchange_rate_id=exchange_rate_id, db=db)
+
+
+@app.post("/add_population/", response_model=schema.Population, tags=["population"])
+def add_population(population: schema.PopulationCreate, db: Session = Depends(get_db)):
+    return crud.create_population(db=db, population=population)
+
+@app.get("/populations/", response_model=list[schema.Population], tags=["population"])
+def read_populations(skip: int = 0, limit: int = 50, db: Session = Depends(get_db)):
+    populations = crud.get_populations(db, skip=skip, limit=limit)
+    return populations
+
+@app.get("/population/{population_id}", response_model=schema.Population, tags=["population"])
+def population(population_id: int, db: Session = Depends(get_db)):
+    db_population = crud.get_population(db=db, population_id=population_id)
+    if db_population is None:
+        raise HTTPException(status_code=404, detail="Population values not found")
+    return db_population
+
+@app.put("/update_population/{population_id}",response_model=schema.Population, tags=["population"])
+def population(population_id: int, updated_population: schema.PopulationCreate, db: Session = Depends(get_db)):
+    return crud.update_population(population_id=population_id, db=db, updated_population=updated_population)
+
+@app.delete("/delete_population/{population_id}", tags=["population"])
+def delete_population(population_id: int, db: Session = Depends(get_db)):
+    return crud.delete_population(population_id=population_id, db=db)

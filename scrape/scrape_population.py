@@ -9,7 +9,7 @@ class ScrapePopulation(BaseScrape):
         table_row = soup.find('td',{"class": "infobox-data"}).text.split(" ")[0]
         data_dict={}
 
-        data_dict[f'{country}_population']= float(table_row.replace(',',''))
+        data_dict[f'{country}_population']= int(table_row.replace(',',''))
         data_dict['country']= country
 
         PostToAPI('http://127.0.0.1:8000/add_population/', json.dumps(data_dict)).api_post()

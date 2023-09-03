@@ -1,1 +1,5 @@
-__pycache__/
+.env
+/airflow/dags/__pycache__/
+/api/__pycache__/
+/fetch/__pycache__/
+/libraries/__pycache__/
